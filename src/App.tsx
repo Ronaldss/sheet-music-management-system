@@ -1,28 +1,18 @@
+<<<<<<< HEAD
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import TitleMusic from "./components/TitleMusic/index";
+=======
+import TitleMusic from './components/TitleMusic';
+>>>>>>> 2ac630bc8c08a3f542887d77d0e5f39bc72b4d15
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <TitleMusic>Partituras</TitleMusic>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <TitleMusic>Partituras</TitleMusic>
     </div>
   );
-}
+};
 
 export default App;

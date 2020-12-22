@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import TitleMusic from './components/TitleMusic/index'
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import TitleMusic from "./components/TitleMusic/index";
 
 function App() {
   return (

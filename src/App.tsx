@@ -1,11 +1,9 @@
-import TitleMusic from './components/TitleMusic';
+import TitleMusic from "./components/TitleMusic";
 
-const App: React.FC = () => {
+export default function App() {
   return (
     <div>
       <TitleMusic>Partituras</TitleMusic>
     </div>
   );
-};
-
-export default App;
+}

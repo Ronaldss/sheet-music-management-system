@@ -1,13 +1,12 @@
-import TitleMusic from "./components/TitleMusic";
 import GlobalsStyles from "./style/GlobalsStyles";
+
+import { Main } from "./routes";
 
 export default function App() {
   return (
     <>
       <GlobalsStyles />
-      <div>
-        <TitleMusic>Partituras</TitleMusic>
-      </div>
+      <Main />
     </>
   );
 }

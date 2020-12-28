@@ -6,9 +6,9 @@ const ButtonMusic = styled.button`
   overflow: hidden;
   cursor:pointer;
 
-  height: 55px;
-  width: 214px;
-  border-radius: 27px;
+  height: 33px;
+  width: 70%;
+  border-radius: 10px;
   background: #E74C3C;
 
   display: flex;

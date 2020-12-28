@@ -49,7 +49,7 @@ export const Content = styled.div`
 `;
 
 export const FormLogin = styled.div`
-background-color: #C0392B;
+  background-color: #C0392B;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -67,9 +67,10 @@ background-color: #C0392B;
 
   h1 {
     color: #fff;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     margin: 20px;
+    margin-bottom:50px;
   }
   h2 {
     color: #c20b2e;
@@ -82,13 +83,14 @@ background-color: #C0392B;
 
     input {
       background: #ecf0f1;
-      border-radius: 10px;
+      border-radius: 5px;
       margin-bottom: 20px;
-      padding: 18px;
+      padding: 8px;
       border-style: none;
       align-items: center;
       width: 90%;
       color: #737373;
+      font-size:12px;
     }
   }
 

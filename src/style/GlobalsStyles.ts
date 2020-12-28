@@ -7,7 +7,8 @@ export default createGlobalStyle`
     padding: 0;
     font-size: 16px;
     font-weight: normal;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Roboto', sans-serif;
   }
   #root, body {
     height: 100%;

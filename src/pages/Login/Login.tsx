@@ -1,5 +1,6 @@
 import { ContainerLogin, Aside, Content, FormLogin } from "./styles";
 import ButtonMusic from '../../components/ButtonMusic/index.js';
+import InputMusic from '../../components/InputMusic/index';
 
 export default function Login() {
   return (
@@ -21,8 +22,10 @@ export default function Login() {
       <>
         <h1>Login</h1>
         <div>
-          <input placeholder="Email" />
-          <input type="password" placeholder="Senha" />
+          {/* <input placeholder="Email" />
+          <input type="password" placeholder="Senha" /> */}
+          <InputMusic />
+          <InputMusic type="password" placeholder="Senha"/>
         </div>
         <ButtonMusic>Entrar</ButtonMusic><br/>
         <div>

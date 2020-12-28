@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import banner from "../../assets/img/grid.png"
 
 export const ContainerLogin = styled.div`
   display: flex;
   flex-direction: row;
   height: 100vh;
   /* background: burlywood; */
-  background: bisque;
+  /* background: bisque; */
+  background:url("${banner}");
 
   @media (max-width: 550px) {
     flex-direction: column;

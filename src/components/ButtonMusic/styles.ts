@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
-const ButtonMusic = styled.button`
-  display:flex;
-  position:relative;
+export const Container = styled.button`
+  display: flex;
+  position: relative;
   overflow: hidden;
-  cursor:pointer;
+  cursor: pointer;
 
-  height: 33px;
-  width: 70%;
-  border-radius: 10px;
-  background: #E74C3C;
+  height: 55px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #e74c3c;
+
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
 
   display: flex;
   justify-content: center;
@@ -18,25 +24,23 @@ const ButtonMusic = styled.button`
   transition: 1s;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     opacity: 1;
     width: 100%;
-    height:100%;
+    height: 100%;
     background-color: #f05645;
     transform-origin: bottom left;
     transform: translateX(100%) scale(1.5) skew(-30deg);
     transition: transform 200ms linear;
   }
 
-  &::after{
-    content: "${(props) => props.children}";
+  &::after {
     position: absolute;
     color: #fff;
-  } 
-  
-  &:hover::before{
+  }
+
+  &:hover::before {
     transform: translateX(-30%) scale(1.5) skew(-30deg);
   }
 `;
-export default ButtonMusic;

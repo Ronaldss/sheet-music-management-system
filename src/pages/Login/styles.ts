@@ -1,13 +1,11 @@
 import styled from "styled-components";
-import banner from "../../assets/img/grid.png"
+import banner from "../../assets/img/grid.png";
 
 export const ContainerLogin = styled.div`
   display: flex;
   flex-direction: row;
   height: 100vh;
-  /* background: burlywood; */
-  /* background: bisque; */
-  background:url("${banner}");
+  background: url("${banner}");
 
   @media (max-width: 550px) {
     flex-direction: column;
@@ -15,99 +13,81 @@ export const ContainerLogin = styled.div`
 `;
 
 export const Aside = styled.div`
-  width: 45%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #C0392B;
+  background-color: #c0392b;
   padding: 10%;
   color: #fff;
 
-  h2 {
-    font-size: 50px;
-    align-items: center;
-    margin: 0;
-  }
-
-  p {
-    margin-top: 35px;
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  @media (max-width: 500px) {
+  @media (max-width: 550px) {
     width: 100%;
-    padding: 20px;
+  }
+`;
+
+export const ImageLogo = styled.img`
+  height: 200px;
+
+  @media (max-width: 550px) {
+    height: 65px;
   }
 `;
 
 export const Content = styled.div`
-  width: 60%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 `;
 
 export const FormLogin = styled.div`
-  background-color: #C0392B;
+  background-color: #c0392b;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   align-items: center;
-  border: 1px solid #dcd5d5;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 0;
+  border-radius: 8px;
+  padding: 67px 0 45px;
   width: 70%;
 
-  hr {
-    margin: 15px;
-  }
-
-  h1 {
-    color: #fff;
-    font-size: 40px;
-    text-align: center;
-    margin: 20px;
-    margin-bottom:50px;
-  }
-  h2 {
-    color: #c20b2e;
-    font-size: 35px;
-    text-align: center;
-    margin: 45px;
-  }
   div {
     width: 80%;
+  }
 
-    input {
-      background: #ecf0f1;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      padding: 8px;
-      border-style: none;
-      align-items: center;
-      width: 90%;
-      color: #737373;
-      font-size:12px;
-    }
+  q {
+    font-size: 12px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
   }
 
   @media (max-width: 800px) {
     width: 80%;
+    padding: 47px 0 22px;
+
+    q {
+      font-size: 10px;
+    }
   }
-  a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  q {
-    font-size:10px;
-    color: #fff;
-  }
+`;
+
+export const Form = styled.form`
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Divide = styled.hr`
+  width: 80%;
+  margin: 15px;
 `;

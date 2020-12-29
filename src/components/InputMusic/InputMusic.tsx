@@ -1,7 +1,8 @@
-import { Container } from './styles';
+import { InputHTMLAttributes } from "react";
+import { Container } from "./styles";
 
-export default function InputMusic(placeholder:string, type?:string){
-    return(
-        <Container placeholder={placeholder} type={type} />
-    );
+export default function InputMusic(
+  props: InputHTMLAttributes<HTMLInputElement>
+) {
+  return <Container {...props} />;
 }

@@ -22,8 +22,6 @@ export default function Login() {
       <>
         <h1>Login</h1>
         <div>
-          {/* <input placeholder="Email" />
-          <input type="password" placeholder="Senha" /> */}
           <InputMusic />
           <InputMusic type="password" placeholder="Senha"/>
         </div>

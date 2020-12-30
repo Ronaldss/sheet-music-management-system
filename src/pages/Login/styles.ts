@@ -91,3 +91,9 @@ export const Divide = styled.hr`
   width: 80%;
   margin: 15px;
 `;
+
+export const Error = styled.span`
+  color: white;
+  font-size: 13px;
+margin: 5px 0;
+`;

@@ -1,6 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { InputMusic, ButtonMusic } from "../../components";
 import Logo from "../../assets/img/logo.png";
+
+import { auth } from "../../database";
 
 import {
   ContainerLogin,
@@ -10,16 +13,36 @@ import {
   FormLogin,
   Form,
   Divide,
+  Error,
 } from "./styles";
+
+type errorsType = {
+  [key: string]: string;
+};
+
+const errors: errorsType = {
+  "auth/invalid-email": "Endereço de email inválido!",
+  "auth/user-disabled": "Usuário desativado!",
+  "auth/user-not-found": "Não existe usuário com esse email cadastrado!",
+  "auth/wrong-password": "Senha incorreta!",
+};
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const history = useHistory();
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log(email, password);
+    setErrorMessage("");
+    try {
+      const response = await auth.signInWithEmailAndPassword(email, password);
+      console.log(response);
+      history.push("/dashboard");
+    } catch (error) {
+      setErrorMessage(errors[error.code]);
+    }
   }
 
   return (
@@ -47,6 +70,7 @@ export default function Login() {
               }
             />
             <ButtonMusic>Entrar</ButtonMusic>
+            {errorMessage.length > 1 && <Error>{errorMessage}</Error>}
           </Form>
           <Divide />
           <div>

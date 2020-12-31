@@ -3,6 +3,7 @@ import { Container } from "./styles";
 
 export default function ButtonMusic({
   children,
+  className = "default",
 }: ButtonHTMLAttributes<HTMLButtonElement>) {
-  return <Container>{children}</Container>;
+  return <Container className={className}>{children}</Container>;
 }

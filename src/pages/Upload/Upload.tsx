@@ -51,7 +51,7 @@ export default function Upload() {
           <ButtonMusic>Enviar</ButtonMusic>
         </div>
         <div>
-          <ButtonMusic>Cancelar</ButtonMusic>
+          <ButtonMusic className="outline">Cancelar</ButtonMusic>
         </div>
       </Section>
     </Container>

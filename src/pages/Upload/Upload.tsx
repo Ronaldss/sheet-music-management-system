@@ -18,7 +18,7 @@ export default function Upload() {
     isDragActive,
     isDragAccept,
     isDragReject,
-  } = useDropzone();
+  } = useDropzone({ accept: "application/pdf" });
 
   const files = acceptedFiles.map((file: FileWithPath) => (
     <ListItem key={file.path}>{file.path}</ListItem>

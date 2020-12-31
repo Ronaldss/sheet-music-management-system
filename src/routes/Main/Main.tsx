@@ -1,4 +1,5 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { NavBar } from "../../components";
 
 import { Login, Home } from "../../pages";
 
@@ -7,7 +8,10 @@ export default function Main() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Login} />
-        <Route path="/dashboard" component={Home} />
+        <div>
+          <NavBar />
+          <Route path="/dashboard" component={Home} />
+        </div>
       </Switch>
     </BrowserRouter>
   );

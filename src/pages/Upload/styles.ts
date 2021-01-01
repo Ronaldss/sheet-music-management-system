@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { DropzoneRootProps } from "react-dropzone";
 
 export const Container = styled.div`
-  margin: 0 auto;
+  margin: 0 auto 20px;
   width: 80%;
 `;
 
@@ -23,7 +23,7 @@ const getColor = (props: DropzoneRootProps) => {
   if (props.isDragActive) {
     return "#2196f3";
   }
-  return "#eeeeee";
+  return "#9CA3AF";
 };
 
 export const DropzoneContainer = styled.div`

@@ -1,6 +1,6 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import { useDropzone, FileWithPath } from "react-dropzone";
-import { ButtonMusic, InputMusic } from "../../components";
+import { ButtonMusic, InputMusic, EditInPlace } from "../../components";
 import {
   Container,
   Title,
@@ -8,12 +8,21 @@ import {
   Section,
   Subtitle,
   List,
-  ListItem,
 } from "./styles";
+
+type Files = FileWithPath & {
+  instrument?: string;
+};
+
+type FileChanged = {
+  instrument: string;
+  path: string;
+};
 
 export default function Upload() {
   const [title, setTitle] = useState("");
-  const [files, setFiles] = useState<FileWithPath[]>([]);
+  const [files, setFiles] = useState<Files[]>([]);
+  const [changed, setChanged] = useState<FileChanged>();
   const {
     acceptedFiles,
     getRootProps,
@@ -24,13 +33,28 @@ export default function Upload() {
   } = useDropzone({ accept: "application/pdf" });
 
   useEffect(() => {
-    setFiles(files.concat(acceptedFiles));
+    function transform() {
+      const newAcceptedFiles = acceptedFiles.map((file: Files) => {
+        file["instrument"] = file.name.slice(0, file.name.length - 4);
+        return file;
+      });
+      setFiles(files.concat(newAcceptedFiles));
+    }
+    transform();
     // eslint-disable-next-line
   }, [acceptedFiles]);
 
-  const filesList = files.map((file: FileWithPath) => (
-    <ListItem key={file.path}>{file.path}</ListItem>
-  ));
+  useEffect(() => {
+    if (changed) {
+      const newFiles = files.map((file) => {
+        if (file.path === changed.path) file.instrument = changed.instrument;
+        return file;
+      });
+      setFiles(newFiles);
+      setChanged(undefined);
+    }
+    // eslint-disable-next-line
+  }, [changed]);
 
   function _onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -62,7 +86,11 @@ export default function Upload() {
         {files.length > 0 && (
           <section>
             <Subtitle>Arquivos aceitos</Subtitle>
-            <List>{filesList}</List>
+            <List>
+              {files.map((file: FileWithPath) => (
+                <EditInPlace file={file} onChangeFile={setChanged} />
+              ))}
+            </List>
           </section>
         )}
         <Section>

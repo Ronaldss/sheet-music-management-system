@@ -56,7 +56,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  background-color: aquamarine;
+  background-color: white;
   padding: 20px;
   border: none;
   border-radius: 8px;
@@ -86,4 +86,8 @@ export const Section = styled.section`
     width: 100%;
     flex-direction: column;
   }
+`;
+
+export const InputEdit = styled.input`
+  width: 100%;
 `;

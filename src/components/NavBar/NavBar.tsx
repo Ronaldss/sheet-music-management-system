@@ -1,17 +1,23 @@
-import { Container, Nav, Menu, List, ListItem, Image } from "./styles";
+import { Container, Nav, Menu, NavLink, List, ListItem, Image } from "./styles";
 
-import Logo from '../../assets/img/logo.png'
+import Logo from "../../assets/img/logo.png";
 
 export default function NavBar() {
   return (
     <Container>
       <Nav>
-        <Image src={Logo} />
+        <NavLink to="/dashboard">
+          <Image src={Logo} />
+        </NavLink>
 
         <Menu>
           <List>
-            <ListItem>Upload</ListItem>
-            <ListItem>Sair</ListItem>
+            <NavLink to="/upload">
+              <ListItem>Upload</ListItem>
+            </NavLink>
+            <NavLink to="/">
+              <ListItem>Sair</ListItem>
+            </NavLink>
           </List>
         </Menu>
       </Nav>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.header`
   height: 60px;
@@ -21,6 +22,10 @@ export const Menu = styled.div`
   align-items: center;
 `;
 
+export const NavLink = styled(Link)`
+  text-decoration: none;
+`;
+
 export const List = styled.ul`
   display: flex;
   list-style: none;
@@ -28,7 +33,7 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   margin-left: 18px;
 `;
 

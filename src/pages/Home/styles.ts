@@ -7,7 +7,7 @@ export const Container = styled.div`
   justify-content: center;
 `;
 export const ImgPainel = styled.img`
-  margin-top:10px;
+  margin-top: 10px;
   height: 400px;
   width: 100%;
 
@@ -23,7 +23,7 @@ export const Nav = styled.header`
     display: flex;
     justify-content: center;
     margin: 10px;
-    font-weight:bold; 
+    font-weight: bold;
     font-size: 36px;
   }
 `;
@@ -38,26 +38,22 @@ export const GridContainer = styled.div`
   justify-self: center;
   align-self: center;
 
-   gap: 10px;
+  gap: 10px;
 
   div {
     font-size: 22px;
     background: #fff;
-    border: solid 1px #C0392B;
+    border: solid 1px #c0392b;
     border-radius: 5px;
     height: 80px;
     width: 350px;
-    
+
     text-align: center;
     line-height: 80px;
-    
   }
-
-`; 
+`;
 
 export const ImageIcon = styled.img`
   height: 30px;
   text-align: center;
 `;
-
-    

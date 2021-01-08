@@ -8,11 +8,15 @@ export default function Main() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Login} />
-        <div>
+
+        <Route path="/dashboard">
           <NavBar />
-          <Route path="/dashboard" component={Home} />
-          <Route path="/upload" component={Upload} />
-        </div>
+          <Home />
+        </Route>
+        <Route path="/upload">
+          <NavBar />
+          <Upload />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

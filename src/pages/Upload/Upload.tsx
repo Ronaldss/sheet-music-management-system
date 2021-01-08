@@ -1,6 +1,9 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import { useDropzone, FileWithPath } from "react-dropzone";
 import { ButtonMusic, InputMusic, EditInPlace } from "../../components";
+
+import { db, storage } from "../../database";
+
 import {
   Container,
   Title,
@@ -59,6 +62,42 @@ export default function Upload() {
   function _onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     console.log("file in onSubmit", title, files);
+    const promises = [];
+    try {
+      files.forEach((file) => {
+        const uploadTask = storage
+          .ref(`${title}`)
+          .child(`${file.name}`)
+          .put(file);
+        promises.push(uploadTask);
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            const progress =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            if (snapshot.state === "running") {
+              console.log(`Progress: ${progress}%`);
+            }
+          },
+          (error) => console.log(error.code),
+          async () => {
+            const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
+            db.collection("musics")
+              .doc(`${title}`)
+              .collection(`${file.instrument}`)
+              .doc()
+              .set({
+                url: downloadURL,
+              });
+          }
+        );
+      });
+      setTitle("");
+      setFiles([]);
+      setChanged(undefined);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (

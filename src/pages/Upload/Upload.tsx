@@ -1,5 +1,5 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from "react";
-import { useDropzone, FileWithPath } from "react-dropzone";
+import { useDropzone } from "react-dropzone";
 import { ButtonMusic, InputMusic, EditInPlace } from "../../components";
 
 import { db, storage } from "../../database";
@@ -12,15 +12,6 @@ import {
   Subtitle,
   List,
 } from "./styles";
-
-type Files = FileWithPath & {
-  instrument?: string;
-};
-
-type FileChanged = {
-  instrument: string;
-  path: string;
-};
 
 export default function Upload() {
   const [title, setTitle] = useState("");
@@ -126,7 +117,7 @@ export default function Upload() {
           <section>
             <Subtitle>Arquivos aceitos</Subtitle>
             <List>
-              {files.map((file: FileWithPath) => (
+              {files.map((file: Files) => (
                 <EditInPlace file={file} onChangeFile={setChanged} />
               ))}
             </List>

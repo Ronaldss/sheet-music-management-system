@@ -1,20 +1,5 @@
-import { useState, useEffect, useRef, Dispatch, SetStateAction } from "react";
-import { FileWithPath } from "react-dropzone";
+import { useState, useEffect, useRef } from "react";
 import { ListItem, InputEdit } from "./styles";
-
-type Files = FileWithPath & {
-  instrument?: string;
-};
-
-type FileChanged = {
-  instrument: string;
-  path: string;
-};
-
-type EditInPlaceProps = {
-  file: Files;
-  onChangeFile: Dispatch<SetStateAction<FileChanged | undefined>>;
-};
 
 export default function EditInPlace({ file, onChangeFile }: EditInPlaceProps) {
   const [isEditing, setIsEditing] = useState(false);

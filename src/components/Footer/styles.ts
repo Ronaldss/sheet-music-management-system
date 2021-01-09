@@ -9,31 +9,10 @@ export const Container = styled.header`
   margin-top: 20px;
 `;
 
-export const Nav = styled.nav`
+export const MainFooter = styled.div`
+  color:#fff;
   width: 80%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-`;
-
-export const Menu = styled.div`
-  display: flex;
   justify-content: center;
-  align-items: center;
-`;
-
-export const List = styled.ul`
-  display: flex;
-  list-style: none;
-`;
-
-export const ListItem = styled.li`
-  color: white;
-  font-size: 20px;
-  margin-left: 18px;
-`;
-
-export const Image = styled.img`
-  width: 100px;
-  height: 50px;
 `;

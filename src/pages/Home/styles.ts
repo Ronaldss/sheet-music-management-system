@@ -5,6 +5,15 @@ export const Container = styled.div`
   background-color: #fdfdfd;
   display: flex;
   justify-content: center;
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom:35px;
+    font-weight: bold;
+    font-size: 36px;
+  }
 `;
 export const ImgPainel = styled.img`
   margin-top: 10px;
@@ -18,14 +27,6 @@ export const ImgPainel = styled.img`
 export const Nav = styled.header`
   width: 80%;
   justify-content: space-between;
-
-  h1 {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    font-weight: bold;
-    font-size: 36px;
-  }
 `;
 export const GridContainer = styled.div`
   display: grid;

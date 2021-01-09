@@ -1,11 +1,11 @@
-import { Container, Nav } from "./styles";
+import { Container, MainFooter } from "./styles";
 
 export default function Footer() {
   return (
     <Container>
-      <Nav>
-        <p>GitHub ...</p>
-      </Nav>
+      <MainFooter>
+        <p>HC & RS</p>
+      </MainFooter>
     </Container>
   );
 }

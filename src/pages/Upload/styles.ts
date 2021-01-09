@@ -72,6 +72,8 @@ export const Section = styled.section`
   align-items: center;
   div {
     width: 100%;
+    padding-top: 30px;
+    padding-bottom:50px;
   }
   div:first-child {
     margin-right: 20px;

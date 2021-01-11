@@ -1,20 +1,27 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
-  background-color: #fdfdfd;
-  display: flex;
+  margin: 0 auto 20px;
+  width: 80%;
+  /* background-color: #fdfdfd; */
+  /* display: flex; */
   justify-content: center;
 
-  h1 {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom:35px;
-    font-weight: bold;
-    font-size: 36px;
+  a {
+    text-decoration: none;
   }
+  a:hover {
+    background: hotpink;
+  }
+
 `;
+export const Title = styled.h1`
+  margin: 20px auto 40px auto;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+`;
+
 export const ImgPainel = styled.img`
   margin-top: 10px;
   height: 400px;
@@ -24,9 +31,10 @@ export const ImgPainel = styled.img`
     height: 65px;
   }
 `;
-export const Nav = styled.header`
-  width: 80%;
-  justify-content: space-between;
+export const Nav = styled.nav`
+  width: 100%;
+  /* display: flex; */
+  /* justify-content: space-between; */
 `;
 export const GridContainer = styled.div`
   display: grid;

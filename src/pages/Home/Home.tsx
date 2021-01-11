@@ -1,27 +1,25 @@
-import { Container, Nav, GridContainer, ImgPainel, ImageIcon } from "./styles";
+import { Container, GridContainer, ImgPainel, ImageIcon, Title } from "./styles";
 import Painel from "../../assets/img/panel.jpeg";
 import Icon from "../../assets/img/music-icon.png";
 
 export default function Home() {
   return (
     <Container>
-      <Nav>
       <ImgPainel src={Painel} alt="img painel" />
-        <h1>Músicas</h1>
+      <Title>Músicas</Title>
+      <nav>  
         <GridContainer>
-          <div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div>
-          <div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div>
-          <div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div>
-
-          <div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div>
-          <div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div>
-          <div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div>
-
-          <div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div>
-          <div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div>
-          <div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div> 
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
         </GridContainer>
-      </Nav>
+      </nav>
     </Container>
   );
 }

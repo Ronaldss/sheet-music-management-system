@@ -4,6 +4,7 @@ import { DropzoneRootProps } from "react-dropzone";
 export const Container = styled.div`
   margin: 0 auto 20px;
   width: 80%;
+  background: green;
 `;
 
 export const Title = styled.h1`

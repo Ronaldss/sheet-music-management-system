@@ -1,11 +1,11 @@
-import { Container, MainFooter } from "./styles";
+import { ContainerFooter, MainFooter } from "./styles";
 
 export default function Footer() {
   return (
-    <Container>
+    <ContainerFooter>
       <MainFooter>
         <p>HC & RS</p>
       </MainFooter>
-    </Container>
+    </ContainerFooter>
   );
 }

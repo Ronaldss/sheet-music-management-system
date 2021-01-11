@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.header`
+export const ContainerFooter = styled.header`
   height: 60px;
   width: 100%;
   background-color: #c0392b;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
 `;
 
 export const MainFooter = styled.div`

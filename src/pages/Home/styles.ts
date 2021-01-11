@@ -38,6 +38,7 @@ export const GridContainer = styled.div`
   justify-items: center;
   justify-self: center;
   align-self: center;
+  padding-bottom: 35px;
 
   gap: 10px;
 

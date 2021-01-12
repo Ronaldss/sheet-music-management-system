@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { NavBar, Footer } from "../../components";
 
-import { Login, Home, Upload, Register } from "../../pages";
+import { Login, Home, Upload, Register, Musics } from "../../pages";
 
 export default function Main() {
   return (
@@ -22,6 +22,11 @@ export default function Main() {
         <Route path="/register">
           <NavBar />
           <Register />
+          <Footer />
+        </Route>
+        <Route path="/musics">
+          <NavBar />
+          <Musics />
           <Footer />
         </Route>
       </Switch>

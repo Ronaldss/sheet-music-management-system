@@ -61,4 +61,3 @@ export const ImageIcon = styled.img`
   height: 35px;
   text-align: center;
 `;
-

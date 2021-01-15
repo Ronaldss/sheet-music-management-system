@@ -2,6 +2,67 @@ import { Container, GridContainer, ImgPainel, ImageIcon, Title } from "./styles"
 import Painel from "../../assets/img/panel.jpeg";
 import Icon from "../../assets/img/music-icon.png";
 
+import { Card } from "../../components";
+
+const array = [
+  {
+    id: '1',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '2',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '3',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '4',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '5',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '6',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '7',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '8',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '9',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '10',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '11',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '12',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '13',
+    title: "Adorador por Excelência",
+  },
+  {
+    id: '14',
+    title: "Adorador por Excelência",
+  },
+]
+
 export default function Home() {
   return (
     <Container>
@@ -9,15 +70,7 @@ export default function Home() {
       <Title>Músicas</Title>
       <nav>  
         <GridContainer>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" /> por Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador  Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador ptgsfdgs</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador gsfg Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />  1 Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adoência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Aor3or sf asdg</div></a>
+          {array.map(item => <Card iconLeft="bx:bxs-file-pdf" title={item.title} />)}
         </GridContainer>
       </nav>
     </Container>

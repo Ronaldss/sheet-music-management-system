@@ -9,15 +9,15 @@ export default function Home() {
       <Title>Músicas</Title>
       <nav>  
         <GridContainer>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" /> por Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador  Excelência</div></a>
           <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
-          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador por Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador ptgsfdgs</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adorador gsfg Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />  1 Excelência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Adoência</div></a>
+          <a href="#"><div><ImageIcon src={Icon} alt="icon" />Aor3or sf asdg</div></a>
         </GridContainer>
       </nav>
     </Container>

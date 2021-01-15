@@ -6,7 +6,6 @@ export default function Musics() {
     <Container>
       <Title>Adorador por Excelência</Title>
       <nav>
-        <p>Aqui é a nav</p>
         <GridContainer>
           <a href="#">
             <div>

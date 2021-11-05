@@ -2,7 +2,7 @@ import { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import { useDropzone } from "react-dropzone";
 import { ButtonMusic, InputMusic, EditInPlace } from "../../components";
 
-import { db, storage } from "../../database";
+import { storage, database } from "../../database";
 
 import {
   Container,
@@ -53,6 +53,24 @@ export default function Upload() {
   function _onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     console.log("file in onSubmit", title, files);
+    let isExist = false;
+    const refListMusic = database.ref("database/list_music");
+    refListMusic.orderByValue().on("value", function (snapshot) {
+      snapshot.forEach(function (data) {
+        const titleMusic = data.child("title").val();
+        if (title === titleMusic) isExist = true;
+      });
+    });
+    if (!isExist) {
+      refListMusic
+        .push({ title })
+        .then(function () {
+          console.log("Synchronization succeeded");
+        })
+        .catch(function (error) {
+          console.log("Synchronization failed");
+        });
+    }
     const promises = [];
     try {
       files.forEach((file) => {
@@ -73,12 +91,15 @@ export default function Upload() {
           (error) => console.log(error.code),
           async () => {
             const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
-            db.collection("musics")
-              .doc(`${title}`)
-              .collection(`${file.instrument}`)
-              .doc()
-              .set({
-                url: downloadURL,
+            const refMusic = database.ref(`database/musics/${title}`);
+
+            refMusic
+              .push({ instrument: file.instrument, url: downloadURL })
+              .then(function () {
+                console.log("Synchronization succeeded");
+              })
+              .catch(function (error) {
+                console.log("Synchronization failed");
               });
           }
         );

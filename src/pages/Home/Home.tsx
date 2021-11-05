@@ -1,76 +1,48 @@
-import { Container, GridContainer, ImgPainel, ImageIcon, Title } from "./styles";
+import { useState, useEffect } from "react";
+
+import { Container, GridContainer, ImgPainel, Title } from "./styles";
 import Painel from "../../assets/img/panel.jpeg";
-import Icon from "../../assets/img/music-icon.png";
+import { database } from "../../database";
 
 import { Card } from "../../components";
 
-const array = [
-  {
-    id: '1',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '2',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '3',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '4',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '5',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '6',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '7',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '8',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '9',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '10',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '11',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '12',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '13',
-    title: "Adorador por Excelência",
-  },
-  {
-    id: '14',
-    title: "Adorador por Excelência",
-  },
-]
+type MusicsType = {
+  id: string;
+  title: string;
+};
 
 export default function Home() {
+  const [musics, setMusics] = useState<MusicsType[]>();
+
+  async function fetchBlogs() {
+    const ref = database.ref("database/list_music");
+    ref.on("value", (snap) => {
+      const list = snap.val();
+      const listMusic = [];
+      for (let id in list) {
+        const obj: MusicsType = {
+          id,
+          ...list[id],
+        };
+        listMusic.push(obj);
+      }
+      setMusics(listMusic);
+    });
+  }
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
   return (
     <Container>
       <ImgPainel src={Painel} alt="img painel" />
       <Title>Músicas</Title>
-      <nav>  
+      <nav>
         <GridContainer>
-          {array.map(item => <Card iconLeft="bx:bxs-file-pdf" title={item.title} />)}
+          {musics?.map((item) => (
+            <Card key={item.id} iconLeft="bx:bxs-file-pdf" title={item.title} />
+          ))}
         </GridContainer>
       </nav>
     </Container>

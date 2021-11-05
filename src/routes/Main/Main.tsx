@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { NavBar, Footer } from "../../components";
 
+import { Layout } from "../../components";
 import { Login, Home, Upload, Register, Musics } from "../../pages";
 
 export default function Main() {
@@ -10,24 +10,24 @@ export default function Main() {
         <Route path="/" exact component={Login} />
 
         <Route path="/dashboard">
-          <NavBar />
-          <Home />
-          <Footer />
+          <Layout>
+            <Home />
+          </Layout>
         </Route>
         <Route path="/upload">
-          <NavBar />
-          <Upload />
-          <Footer />
+          <Layout>
+            <Upload />
+          </Layout>
         </Route>
         <Route path="/register">
-          <NavBar />
-          <Register />
-          <Footer />
+          <Layout>
+            <Register />
+          </Layout>
         </Route>
         <Route path="/musics/:title">
-          <NavBar />
-          <Musics />
-          <Footer />
+          <Layout>
+            <Musics />
+          </Layout>
         </Route>
       </Switch>
     </BrowserRouter>

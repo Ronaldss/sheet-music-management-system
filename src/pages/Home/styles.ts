@@ -8,7 +8,6 @@ export const Container = styled.div`
   a {
     text-decoration: none;
   }
-
 `;
 export const Title = styled.h1`
   margin: 20px auto 40px auto;
@@ -36,22 +35,11 @@ export const GridContainer = styled.div`
 
   gap: 15px;
 
-  div {
-    font-size: 22px;
-    background: #fff;
-    border: solid 1px #c0392b;
-    border-radius: 5px;
-    width: 100%;
-    padding: 30px 0;
-
-    text-align: center;
-  }
-
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
 `;

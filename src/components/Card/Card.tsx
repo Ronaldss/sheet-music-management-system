@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import { Container, Title, Icon } from "./styles";
+import { Container, Title, IconContainer, Icon } from "./styles";
 
 type CardProps = {
   iconLeft: string;
@@ -20,7 +20,9 @@ export default function Card({ iconLeft, title, url }: CardProps) {
 
   return (
     <Container onClick={url ? openSheetMusic : handleNavigation}>
-      <Icon className="iconify" data-icon={iconLeft} />
+      <IconContainer>
+        <Icon className="iconify" data-icon={iconLeft} />
+      </IconContainer>
       <Title>{title}</Title>
     </Container>
   );

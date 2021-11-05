@@ -38,13 +38,11 @@ export default function Home() {
     <Container>
       <ImgPainel src={Painel} alt="img painel" />
       <Title>Músicas</Title>
-      <nav>
-        <GridContainer>
-          {musics?.map((item) => (
-            <Card key={item.id} iconLeft="bx:bxs-file-pdf" title={item.title} />
-          ))}
-        </GridContainer>
-      </nav>
+      <GridContainer>
+        {musics?.map((item) => (
+          <Card key={item.id} iconLeft="bx:bxs-file-pdf" title={item.title} />
+        ))}
+      </GridContainer>
     </Container>
   );
 }

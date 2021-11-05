@@ -16,8 +16,14 @@ export const Title = styled.h1`
   font-size: 22px;
 `;
 
+export const IconContainer = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+`;
+
 export const Icon = styled.span`
   font-size: 40px;
   display: block;
-  margin: 0 20px;
+  margin-right: 10px;
 `;

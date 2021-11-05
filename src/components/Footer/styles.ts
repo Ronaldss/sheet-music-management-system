@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerFooter = styled.header`
+export const ContainerFooter = styled.footer`
   height: 60px;
   width: 100%;
   background-color: #c0392b;
@@ -9,7 +9,7 @@ export const ContainerFooter = styled.header`
 `;
 
 export const MainFooter = styled.div`
-  color:#fff;
+  color: #fff;
   width: 80%;
   display: flex;
   align-items: center;

@@ -1,74 +1,58 @@
-import { Container, GridContainer, ImageIcon, Title } from "./styles";
-import Icon from "../../assets/img/pdf-icon.png";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
+import { Container, GridContainer, Title } from "./styles";
 import { Card } from "../../components";
+import { database } from "../../database";
 
-const array = [
-  {
-    id: '1',
-    title: "Violino 1",
-  },
-  {
-    id: '2',
-    title: "Violino 1",
-  },
-  {
-    id: '3',
-    title: "Violino 1",
-  },
-  {
-    id: '4',
-    title: "Violino 1",
-  },
-  {
-    id: '5',
-    title: "Violino 1",
-  },
-  {
-    id: '6',
-    title: "Violino 1",
-  },
-  {
-    id: '7',
-    title: "Violino 1",
-  },
-  {
-    id: '8',
-    title: "Violino 1",
-  },
-  {
-    id: '9',
-    title: "Violino 1",
-  },
-  {
-    id: '10',
-    title: "Violino 1",
-  },
-  {
-    id: '11',
-    title: "Violino 1",
-  },
-  {
-    id: '12',
-    title: "Violino 1",
-  },
-  {
-    id: '13',
-    title: "Violino 1",
-  },
-  {
-    id: '14',
-    title: "Violino 1",
-  },
-]
+interface RouteParams {
+  title: string;
+}
+
+interface SheetMusicsInterface {
+  id: string;
+  instrument: string;
+  url: string;
+}
 
 export default function Musics() {
+  const { title } = useParams<RouteParams>();
+  const [sheetMusics, setSheetMusics] = useState<SheetMusicsInterface[]>();
+
+  async function fetchSheetMusics() {
+    const ref = database.ref(`database/musics/${title}`);
+    ref.on("value", (snap) => {
+      const list = snap.val();
+      const listMusic = [];
+      for (let id in list) {
+        const obj: SheetMusicsInterface = {
+          id,
+          ...list[id],
+        };
+        listMusic.push(obj);
+      }
+      setSheetMusics(listMusic);
+    });
+  }
+
+  useEffect(() => {
+    fetchSheetMusics();
+    // eslint-disable-next-line
+  }, [title]);
+
   return (
     <Container>
-      <Title>Adorador por Excelência</Title>
+      <Title>{title}</Title>
       <nav>
         <GridContainer>
-        {array.map(item => <Card iconLeft="bx:bxs-file-pdf" title={item.title} />)}
+          {sheetMusics?.map((item) => (
+            <Card
+              key={item.id}
+              iconLeft="bx:bxs-file-pdf"
+              title={item.instrument}
+              url={item.url}
+            />
+          ))}
         </GridContainer>
       </nav>
     </Container>

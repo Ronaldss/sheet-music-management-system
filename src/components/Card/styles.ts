@@ -8,6 +8,8 @@ export const Container = styled.div`
   border-radius: 5px;
   width: 100%;
   padding: 20px 20px;
+  cursor: pointer;
+  height: auto;
 `;
 
 export const Title = styled.h1`

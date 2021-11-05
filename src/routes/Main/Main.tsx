@@ -24,7 +24,7 @@ export default function Main() {
           <Register />
           <Footer />
         </Route>
-        <Route path="/musics">
+        <Route path="/musics/:title">
           <NavBar />
           <Musics />
           <Footer />

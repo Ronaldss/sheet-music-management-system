@@ -15,6 +15,7 @@ import {
   Divide,
   Error,
 } from "./styles";
+import { useFirebaseAuth } from "../../context";
 
 type errorsType = {
   [key: string]: string;
@@ -32,7 +33,8 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const history = useHistory();
-
+  const { user } = useFirebaseAuth();
+  console.log("user", user);
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setErrorMessage("");

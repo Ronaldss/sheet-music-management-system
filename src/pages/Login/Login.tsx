@@ -33,15 +33,14 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const history = useHistory();
-  const { user } = useFirebaseAuth();
-  console.log("user", user);
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setErrorMessage("");
     try {
-      const response = await auth.signInWithEmailAndPassword(email, password);
-      console.log(response);
-      history.push("/dashboard");
+      await auth.signInWithEmailAndPassword(email, password);
+
+      history.push("/register");
     } catch (error) {
       setErrorMessage(errors[error.code]);
     }

@@ -7,8 +7,8 @@ import { useFirebaseAuth } from "../../context";
 
 export default function NavBar() {
   const history = useHistory();
-  const { logout } = useFirebaseAuth();
-
+  const { logout, user } = useFirebaseAuth();
+  console.log("currentUser", user);
   function goUpload() {
     history.push("/upload");
   }
@@ -27,7 +27,7 @@ export default function NavBar() {
 
         <Menu>
           <List>
-            <ListItem onClick={goUpload}>Upload</ListItem>
+            {user?.isAdmin && <ListItem onClick={goUpload}>Upload</ListItem>}
 
             <ListItem onClick={logoutApp}>Sair</ListItem>
           </List>

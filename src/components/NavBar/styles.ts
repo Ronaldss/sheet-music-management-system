@@ -35,6 +35,10 @@ export const ListItem = styled.li`
   color: white;
   font-size: 16px;
   margin-left: 18px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const Image = styled.img`

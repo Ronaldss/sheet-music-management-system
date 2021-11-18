@@ -1,10 +1,13 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import firebase from "firebase/app";
-import { auth } from "../database";
+import { auth, db } from "../database";
 
-type User = firebase.User | null;
+interface User extends firebase.User {
+  isAdmin: boolean;
+}
+
 type ContextState = {
-  user: User;
+  user: User | null;
   logout: () => void;
 };
 
@@ -19,7 +22,14 @@ export const AuthProvider: React.FC = ({ children }) => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         localStorage.setItem("authUser", JSON.stringify(authUser));
-        setUser(authUser);
+        let isAdmin: boolean;
+        db.collection("users")
+          .doc(authUser.uid)
+          .get()
+          .then((doc) => {
+            isAdmin = doc?.data()?.isAdmin;
+            setUser({ ...authUser, isAdmin });
+          });
       } else {
         localStorage.removeItem("authUser");
         setUser(null);

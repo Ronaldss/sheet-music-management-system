@@ -33,6 +33,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const history = useHistory();
+  const { user } = useFirebaseAuth();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -40,7 +41,9 @@ export default function Login() {
     try {
       await auth.signInWithEmailAndPassword(email, password);
 
-      history.push("/register");
+      if (user?.displayName === "maestro" || user?.displayName === "musico")
+        history.push("/register");
+      else history.push("/dashboard");
     } catch (error) {
       setErrorMessage(errors[error.code]);
     }
@@ -66,6 +69,7 @@ export default function Login() {
               type="password"
               placeholder="Senha"
               value={password}
+              minLength={6}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
                 setPassword(event.target.value)
               }

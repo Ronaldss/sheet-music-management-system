@@ -66,6 +66,7 @@ export default function Register() {
           type="password"
           name="password"
           placeholder="Senha"
+          minLength={6}
           onChange={(event) =>
             setFormValues({ ...formValues, password: event.target.value })
           }
@@ -74,6 +75,7 @@ export default function Register() {
           type="password"
           name="confirm_password"
           placeholder="Digite a senha novamente"
+          minLength={6}
           onChange={(event) =>
             setFormValues({
               ...formValues,
